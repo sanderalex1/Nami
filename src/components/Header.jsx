@@ -8,7 +8,7 @@ function Header() {
   ];
 
   return (
-    <header className="px-36 py-10">
+    <header className="px-20 py-6">
       <div className="flex justify-between text-lg">
         {navLinks.map(({ label, path, subLabel }, index) => (
           <NavLink
@@ -16,13 +16,13 @@ function Header() {
             to={path}
             className={`block ${
               index === 1
-                ? "flex flex-col items-center font-['Zen_Maru_Gothic'] font-bold text-5xl text-[var(--secondaryText)]"
-                : "font-['IBM_Plex_Mono'] font-normal text-[var(--text)] text-xl"
+                ? "flex flex-col items-center gap-2 tracking-[8px] font-['Zen_Maru_Gothic'] font-bold text-5xl text-[var(--secondaryText)]"
+                : "flex items-center font-['IBM_Plex_Mono']  font-normal text-[var(--text)] text-2xl"
             }`}
           >
-            <span>{label}</span>
+            <span>{label.toLocaleUpperCase()}</span>
             {index === 1 && subLabel && (
-              <span className="text-base font-normal">{subLabel}</span>
+              <span className="text-2xl font-normal ">{subLabel}</span>
             )}
           </NavLink>
         ))}
