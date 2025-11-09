@@ -1,0 +1,9 @@
+:root {
+  --bg: #ffeaf0;
+  --text: #1e283f;
+  --secondaryText: #fd5a5c;
+  --primary: #ff7b876b;
+  --border: #fc9ba8;
+  --font-heading: "Zen Maru Gothic", sans-serif;
+  --font-body: "IBM Plex Mono", monospace;
+}
