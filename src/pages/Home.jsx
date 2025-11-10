@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 function Home() {
   return (
     <>
-      <div className="flex justify-between items-center overflow-hidden px-36 ">
+      <div className="flex justify-between items-center overflow-hidden px-50 ">
         <div className="text-2xl max-w-[15rem] leading-10">
           every{" "}
           <span className="text-3xl text-[var(--secondaryText)] font-bold">
