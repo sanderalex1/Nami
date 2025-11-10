@@ -3,7 +3,7 @@ import Button from "@mui/material/Button";
 function Home() {
   return (
     <>
-      <div className="flex justify-between items-center min-h-dvh overflow-hidden px-36">
+      <div className="flex justify-between items-center overflow-hidden px-36 ">
         <div className="text-2xl max-w-[15rem] leading-10">
           every{" "}
           <span className="text-3xl text-[var(--secondaryText)] font-bold">
@@ -20,13 +20,6 @@ function Home() {
             src="/bgImage.png"
             alt="sushi table"
           />
-          <Button
-            variant="outlined"
-            size="large"
-            sx={{ borderColor: "var(--border)", color: "var(--text)" }}
-          >
-            Book a table
-          </Button>
         </div>
         <div className="flex flex-col gap-1 text-2xl leading-10">
           <div className="flex self-center">

@@ -7,7 +7,7 @@ function App() {
   return (
     <>
       <Header />
-      <main>
+      <main className="h-[80dvh]">
         <Outlet />
       </main>
       <Footer />

@@ -9,7 +9,7 @@ function Header() {
   ];
 
   return (
-    <header className="px-20 py-6 fixed w-full">
+    <header className="px-20 py-6 w-full">
       <div className="flex justify-between text-lg ">
         {navLinks.map(({ label, path, subLabel }, index) => (
           <NavLink
