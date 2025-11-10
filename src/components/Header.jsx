@@ -4,12 +4,13 @@ function Header() {
   const navLinks = [
     { label: "Menu", path: "/menu" },
     { label: "Nami", path: "/", subLabel: "ナミ" },
+    // { label: "Shoping Cart" },
     { label: "Sign In", path: "/signIn" },
   ];
 
   return (
-    <header className="px-20 py-6">
-      <div className="flex justify-between text-lg">
+    <header className="px-20 py-6 fixed w-full">
+      <div className="flex justify-between text-lg ">
         {navLinks.map(({ label, path, subLabel }, index) => (
           <NavLink
             key={label}
