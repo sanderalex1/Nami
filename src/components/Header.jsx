@@ -1,11 +1,10 @@
 import { NavLink } from "react-router-dom";
+import ShoppingCartOutlinedIcon from "@mui/icons-material/ShoppingCartOutlined";
 
 function Header() {
   const navLinks = [
     { label: "Menu", path: "/menu" },
     { label: "Nami", path: "/", subLabel: "ナミ" },
-    // { label: "Shoping Cart" },
-    { label: "Sign In", path: "/signIn" },
   ];
 
   return (
@@ -18,15 +17,29 @@ function Header() {
             className={`block ${
               index === 1
                 ? "flex flex-col items-center gap-2 tracking-[8px] font-['Zen_Maru_Gothic'] font-bold text-5xl text-[var(--secondaryText)]"
-                : "flex items-center font-['IBM_Plex_Mono']  font-normal text-[var(--text)] text-2xl"
+                : "flex items-center gap-3 font-['IBM_Plex_Mono']  font-normal text-[var(--text)] text-2xl"
             }`}
           >
             <span>{label.toLocaleUpperCase()}</span>
+
             {index === 1 && subLabel && (
               <span className="text-2xl font-normal ">{subLabel}</span>
             )}
           </NavLink>
         ))}
+
+        <div className="flex items-center gap-4">
+          <NavLink to="/cart">
+            <ShoppingCartOutlinedIcon className="w-6 h-6 text-[var(--text)]" />
+          </NavLink>
+
+          <NavLink
+            to="/signIn"
+            className="font-['IBM_Plex_Mono'] font-normal text-[var(--text)] text-2xl uppercase"
+          >
+            Sign In
+          </NavLink>
+        </div>
       </div>
     </header>
   );
