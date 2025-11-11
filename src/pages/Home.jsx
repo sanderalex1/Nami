@@ -17,7 +17,7 @@ function Home() {
         <div className="flex flex-col justify-center items-center relative">
           <div className="relative inline-block">
             <img
-              className="max-w-2xl w-auto block"
+              className="max-w-2xl mr-25 w-auto block"
               src="/bgImage.png"
               alt="sushi table"
             />

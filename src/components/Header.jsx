@@ -8,7 +8,7 @@ function Header() {
   ];
 
   return (
-    <header className="px-30 py-6 w-full">
+    <header className="px-48 py-6 w-full">
       <div className="flex justify-between text-lg ">
         {navLinks.map(({ label, path, subLabel }, index) => (
           <NavLink
@@ -28,15 +28,14 @@ function Header() {
           </NavLink>
         ))}
 
-        <div className="flex items-center gap-4">
+        <div className="flex items-center min-w-min gap-4">
           <NavLink to="/cart">
             <ShoppingCartOutlinedIcon className="w-6 h-6 text-[var(--text)]" />{" "}
-            |
           </NavLink>
-
+          |
           <NavLink
             to="/signIn"
-            className="font-['IBM_Plex_Mono'] font-normal text-[var(--text)]  text-2xl uppercase"
+            className="font-['IBM_Plex_Mono'] font-normal text-[var(--text)]  text-2xl uppercase whitespace-nowrap"
           >
             Sign In
           </NavLink>
