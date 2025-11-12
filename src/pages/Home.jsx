@@ -22,15 +22,19 @@ function Home() {
               alt="sushi table"
             />
 
-            <div className="absolute bottom-0 right-0 w-56 h-70 flex justify-center items-center group">
-              <img className="absolute" src="stick.svg" alt="stick 1" />
+            <div className="absolute bottom-0 right-0 w-80 h-80 flex justify-center items-center group">
               <img
-                className="absolute translate-x-5 translate-y-5 rotate-2 transition-transform duration-300 group-hover:rotate-8"
-                src="stick.svg"
+                className="absolute translate-x-10 -translate-y-5"
+                src="stick_500px.svg"
+                alt="stick 1"
+              />
+              <img
+                className="absolute translate-x-17 translate-y-3 rotate-1 transition-transform duration-300 group-hover:rotate-9"
+                src="stick_500px.svg"
                 alt="stick 2"
               />
               <img
-                className="absolute -translate-x-23 translate-y-24 opacity-0 group-hover:opacity-100"
+                className="absolute w-12 h-12 -translate-x-23 translate-y-28 rotate-10 opacity-0 group-hover:opacity-100"
                 src="sticksEffect.svg"
                 alt="sticks effect"
               />
