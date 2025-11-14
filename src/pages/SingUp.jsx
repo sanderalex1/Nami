@@ -1,7 +1,7 @@
 import Link from "@mui/material/Link";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
-function SignIn() {
+function SignUp() {
   return (
     <div className="flex flex-col items-center gap-5 pt-12 pr-32">
       <div>
@@ -31,7 +31,7 @@ function SignIn() {
           />
         </div>
         <div>
-          <p>Password</p>
+          <p>Name</p>
           <TextField
             sx={{
               width: 400,
@@ -69,20 +69,20 @@ function SignIn() {
             color="none"
             variant="outlined"
           >
-            Sign In
+            Sign Up
           </Button>
           <p className="pt-2">
-            Don’t have an account?
+            Already have an account?
             <Link
               sx={{
                 color: "black",
                 textDecorationColor: "black",
                 pl: 1,
               }}
-              href="/signup"
+              href="/signin"
               underline="always"
             >
-              Join Us!
+              Sign In!
             </Link>
           </p>
         </div>
@@ -91,4 +91,4 @@ function SignIn() {
   );
 }
 
-export default SignIn;
+export default SignUp;

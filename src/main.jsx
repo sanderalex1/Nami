@@ -6,6 +6,7 @@ import Home from "./pages/Home.jsx";
 import Menu from "./pages/Menu.jsx";
 import SignIn from "./pages/SignIn.jsx";
 import Error from "./pages/Error.jsx";
+import SignUp from "./pages/SingUp.jsx";
 import {
   createBrowserRouter,
   RouterProvider,
@@ -21,7 +22,8 @@ const router = createBrowserRouter([
       { index: true, element: <Home /> },
       { path: "/", element: <Home /> },
       { path: "menu", element: <Menu /> },
-      { path: "signIn", element: <SignIn /> },
+      { path: "signin", element: <SignIn /> },
+      { path: "signup", element: <SignUp /> },
     ],
   },
 ]);

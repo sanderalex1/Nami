@@ -29,15 +29,15 @@ function Header() {
         ))}
 
         <div className="flex items-center min-w-min gap-4">
-          <NavLink to="/cart">
-            <ShoppingCartOutlinedIcon className="w-6 h-6 text-[var(--text)]" />{" "}
-          </NavLink>
+          <div className="cursor-pointer">
+            <ShoppingCartOutlinedIcon className="w-6 h-6 text-[var(--text)]" />
+          </div>
           |
           <NavLink
-            to="/signIn"
+            to="/signin"
             className="font-['IBM_Plex_Mono'] font-normal text-[var(--text)]  text-2xl uppercase whitespace-nowrap"
           >
-            Sign In
+            Log In
           </NavLink>
         </div>
       </div>
