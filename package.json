@@ -3,7 +3,6 @@
   "private": true,
   "version": "0.0.0",
   "type": "module",
-  "homepage": "https://sanderalex1.github.io/Nami/",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
