@@ -13,20 +13,23 @@ import {
   Navigate,
 } from "react-router-dom";
 
-const router = createBrowserRouter([
-  {
-    path: "/",
-    element: <App />,
-    errorElement: <Error />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "/", element: <Home /> },
-      { path: "menu", element: <Menu /> },
-      { path: "signin", element: <SignIn /> },
-      { path: "signup", element: <SignUp /> },
-    ],
-  },
-]);
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      errorElement: <Error />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "/", element: <Home /> },
+        { path: "menu", element: <Menu /> },
+        { path: "signin", element: <SignIn /> },
+        { path: "signup", element: <SignUp /> },
+      ],
+    },
+  ],
+  { basename: "/Nami/" }
+);
 
 createRoot(document.getElementById("root")).render(
   <StrictMode>
