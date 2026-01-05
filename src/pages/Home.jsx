@@ -1,10 +1,8 @@
-import Button from "@mui/material/Button";
-
 function Home() {
   return (
     <>
-      <div className="flex justify-between items-center overflow-hidden px-50 ">
-        <div className="text-2xl max-w-[15rem] leading-10">
+      <div className="flex justify-between items-center overflow-hidden px-50  ">
+        <div className="text-[28px] max-w-[16.5rem] leading-10 font-light ">
           every{" "}
           <span className="text-3xl text-[var(--secondaryText)] font-bold">
             bite
@@ -41,7 +39,7 @@ function Home() {
             </div>
           </div>
         </div>
-        <div className="flex flex-col gap-1 text-2xl leading-10">
+        <div className="flex flex-col gap-1 text-[28px] leading-10 font-light">
           <div className="flex self-center">
             <p className="text-[var(--secondaryText)] font-bold text-3xl">
               mon

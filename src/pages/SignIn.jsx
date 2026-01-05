@@ -5,7 +5,7 @@ function SignIn() {
   return (
     <div className="flex flex-col items-center gap-5 pt-12 pr-32">
       <div>
-        <img className="h-60 w-60" src="logo.svg" alt="" />
+        <img className="h-60 w-60" src="logo2.svg" alt="" />
       </div>
       <div className="flex flex-col gap-8 text-xl">
         <div>
