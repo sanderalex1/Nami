@@ -1,24 +1,36 @@
 import Grid from "@mui/material/Grid";
+import { Box } from "@mui/material";
+import { Container } from "@mui/material";
 import Button from "@mui/material/Button";
+import ProductCard from "../components/ProductCard";
+import { menu } from "../data";
 import { useState } from "react";
 
 function Menu() {
-  const [active, setActive] = useState("Nigiri");
+  const [active, setActive] = useState("nigiri");
 
   const buttons = [
     {
-      name: "Nigiri",
+      id: "nigiri",
+      label: "Nigiri",
       activeIcon: "nigiri-white.svg",
       disabledIcon: "nigiri.svg",
     },
     {
-      name: "Rolls",
+      id: "rolls",
+      label: "Rolls",
       activeIcon: "rolls-white.svg",
       disabledIcon: "rolls.svg",
     },
-    { name: "Ramen", activeIcon: "ramen-white.svg", disabledIcon: "ramen.svg" },
     {
-      name: "Drinks",
+      id: "ramen",
+      label: "Ramen",
+      activeIcon: "ramen-white.svg",
+      disabledIcon: "ramen.svg",
+    },
+    {
+      id: "drinks",
+      label: "Drinks",
       activeIcon: "drinks-white.svg",
       disabledIcon: "drinks.svg",
     },
@@ -42,7 +54,7 @@ function Menu() {
   };
 
   return (
-    <>
+    <Box sx={{}}>
       <Grid
         container
         spacing={8}
@@ -51,15 +63,15 @@ function Menu() {
         marginTop={4}
         width="95svw"
       >
-        {buttons.map(({ name, activeIcon, disabledIcon }) => (
+        {buttons.map(({ id, label, activeIcon, disabledIcon }) => (
           <Button
-            key={name}
-            onClick={() => setActive(name)}
+            key={id}
+            onClick={() => setActive(id)}
             size="large"
             variant="outlined"
             sx={{
               ...buttonStyle,
-              ...(active === name && {
+              ...(active === id && {
                 backgroundColor: "#B22222",
                 color: "white",
                 "&:hover": {
@@ -68,12 +80,34 @@ function Menu() {
               }),
             }}
           >
-            <img src={active === name ? activeIcon : disabledIcon} alt={name} />
-            {name}
+            <img src={active === id ? activeIcon : disabledIcon} alt={label} />
+            {label}
           </Button>
         ))}
       </Grid>
-    </>
+
+      <Grid
+        container
+        spacing={4}
+        marginTop={4}
+        justifyContent="space-between"
+        sx={{ maxWidth: "1200px", margin: "0 auto" }}
+      >
+        {menu[active]?.map((product) => (
+          <Grid
+            item
+            marginTop={4}
+            xs={12}
+            sm={6}
+            md={4}
+            lg={4}
+            key={product.id}
+          >
+            <ProductCard {...product} />
+          </Grid>
+        ))}
+      </Grid>
+    </Box>
   );
 }
 
