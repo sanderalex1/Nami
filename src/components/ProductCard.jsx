@@ -8,8 +8,8 @@ function ProductCard({ picture, name, description, price }) {
       <p className="text-center font-['IBM_Plex_Mono'] text-[14px] font-[400] text-[#666666]">
         {description}
       </p>
-      <div className="flex gap-4 items-center h-[33px]">
-        <button className="rounded-[94px] w-[116] h-[33px] px-[12px] bg-[#3C3C43] text-white">
+      <div className="flex gap-4 items-center">
+        <button className="rounded-[94px] w-[150px] h-[33px] px-[12px] bg-[#3C3C43] text-white">
           Add to cart
         </button>
         <p className="font-['IBM_Plex_Mono'] text-[16px] font-[500] uppercase ">

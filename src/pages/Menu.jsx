@@ -1,6 +1,5 @@
 import Grid from "@mui/material/Grid";
 import { Box } from "@mui/material";
-import { Container } from "@mui/material";
 import Button from "@mui/material/Button";
 import ProductCard from "../components/ProductCard";
 import { menu } from "../data";
@@ -54,7 +53,7 @@ function Menu() {
   };
 
   return (
-    <Box sx={{}}>
+    <Box>
       <Grid
         container
         spacing={8}
@@ -86,27 +85,37 @@ function Menu() {
         ))}
       </Grid>
 
-      <Grid
-        container
-        spacing={4}
-        marginTop={4}
-        justifyContent="space-between"
-        sx={{ maxWidth: "1200px", margin: "0 auto" }}
+      <Box
+        sx={{
+          maxHeight: "70vh",
+          overflowY: "auto",
+          padding: 2,
+          "&::-webkit-scrollbar": { display: "none" }, // Chrome, Safari
+          scrollbarWidth: "none", // Firefox
+        }}
       >
-        {menu[active]?.map((product) => (
-          <Grid
-            item
-            marginTop={4}
-            xs={12}
-            sm={6}
-            md={4}
-            lg={4}
-            key={product.id}
-          >
-            <ProductCard {...product} />
-          </Grid>
-        ))}
-      </Grid>
+        <Grid
+          container
+          spacing={4}
+          marginTop={4}
+          justifyContent="space-between"
+          sx={{ maxWidth: "1200px", margin: "0 auto" }}
+        >
+          {menu[active]?.map((product) => (
+            <Grid
+              item
+              marginTop={4}
+              xs={12}
+              sm={6}
+              md={4}
+              lg={4}
+              key={product.id}
+            >
+              <ProductCard {...product} />
+            </Grid>
+          ))}
+        </Grid>
+      </Box>
     </Box>
   );
 }

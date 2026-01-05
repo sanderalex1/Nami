@@ -16,7 +16,7 @@ function Home() {
           <div className="relative inline-block">
             <img
               className="max-w-2xl mr-25 w-auto block"
-              src="/bgImage.png"
+              src="bgImage.png"
               alt="sushi table"
             />
 
