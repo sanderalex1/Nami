@@ -2,23 +2,29 @@ import { useState } from "react";
 import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
 import Home from "./pages/Home";
-import Card from "./Components/Card";
+import Card from "./Components/Cards";
+import Menu from "./pages/Menu";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [basketOpen, setBasketOpen] = useState(false);
+  const [surfaceCount, setSurfaceCount] = useState(0);
+  const isSurface = sidebarOpen || surfaceCount > 0;
+  const appBarBg = isSurface ? "paper" : "default";
 
   return (
     <>
       <Navbar
+        appBarBg={appBarBg}
         open={sidebarOpen}
         onMenuClick={() => setSidebarOpen(true)}
         onCloseSidebar={() => setSidebarOpen(false)}
         onOpenBasket={basketOpen}
       />
-      <Home />
+      <Menu setSurfaceCount={setSurfaceCount} />
+      {/* <Home /> */}
+
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
-      <Card />
     </>
   );
 }

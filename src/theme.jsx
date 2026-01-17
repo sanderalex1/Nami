@@ -34,6 +34,7 @@ const theme = createTheme({
     h5: { fontFamily: "Quick" },
     h6: { fontFamily: "Legajo", lineHeight: "2.1rem" },
     h7: { fontFamily: "Quick" },
+    h8: { fontFamily: "Legajo" },
   },
 
   components: {

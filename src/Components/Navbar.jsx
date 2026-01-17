@@ -3,7 +3,13 @@ import menuButton from "../assets/menuButton.svg";
 import basketCase from "../assets/basketCase.svg";
 import cross from "../assets/cross.svg";
 
-const Navbar = ({ open, onMenuClick, onCloseSidebar, onOpenBasket }) => {
+const Navbar = ({
+  open,
+  onMenuClick,
+  onCloseSidebar,
+  onOpenBasket,
+  appBarBg,
+}) => {
   const handleIconClick = () => {
     if (open) {
       onCloseSidebar();
@@ -16,13 +22,18 @@ const Navbar = ({ open, onMenuClick, onCloseSidebar, onOpenBasket }) => {
     <AppBar
       position="static"
       elevation={0}
-      sx={{
-        width: "100vw",
-        zIndex: (theme) => theme.zIndex.drawer + 1,
+      sx={(theme) => ({
+        width: "100%",
+        zIndex: theme.zIndex.drawer + 1,
         boxSizing: "border-box",
-        background: open ? "var(--secondary-bg)" : "var(--main-bg)",
-        color: "black",
-      }}
+        backgroundColor:
+          appBarBg === "paper"
+            ? theme.palette.background.paper
+            : theme.palette.background.default,
+        color: theme.palette.text.primary,
+        boxShadow: "none",
+        color: theme.palette.text.primary,
+      })}
     >
       <Toolbar
         disableGutters

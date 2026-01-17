@@ -1,4 +1,5 @@
 import { Box, Divider, Drawer, Typography } from "@mui/material";
+import { useEffect } from "react";
 
 const NAVBAR_HEIGHT = "72px";
 
@@ -8,6 +9,17 @@ const Sidebar = ({ open, onClose }) => {
     { number: "02", name: "Menu" },
     { number: "03", name: "Profile" },
   ];
+
+  useEffect(() => {
+    document.body.style.overflow = "unset";
+    if (open) {
+      document.body.style.overflow = "hidden";
+    }
+
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [open]);
 
   return (
     <Drawer
