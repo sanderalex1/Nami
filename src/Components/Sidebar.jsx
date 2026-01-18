@@ -1,13 +1,14 @@
 import { Box, Divider, Drawer, Typography } from "@mui/material";
 import { useEffect } from "react";
+import { Link as RouterLink } from "react-router-dom";
 
 const NAVBAR_HEIGHT = "72px";
 
 const Sidebar = ({ open, onClose }) => {
-  const menuList = [
-    { number: "01", name: "Home" },
-    { number: "02", name: "Menu" },
-    { number: "03", name: "Profile" },
+  const navigationList = [
+    { number: "01", name: "Home", link: "/" },
+    { number: "02", name: "Menu", link: "menu" },
+    { number: "03", name: "Profile", link: "profile" },
   ];
 
   useEffect(() => {
@@ -54,7 +55,7 @@ const Sidebar = ({ open, onClose }) => {
           gap: "2rem",
         }}
       >
-        {menuList.map(({ number, name }) => (
+        {navigationList.map(({ number, name, link }) => (
           <Box
             display="flex"
             flexDirection="column"
@@ -63,7 +64,20 @@ const Sidebar = ({ open, onClose }) => {
             key={number}
           >
             <Typography variant="h7">{number}</Typography>
-            <Typography variant="h6">{name.toUpperCase()}</Typography>
+            <Typography
+              variant="h6"
+              component={RouterLink}
+              to={link}
+              onClick={onClose}
+              sx={{
+                whiteSpace: "nowrap",
+                textTransform: "uppercase",
+                textDecoration: "none",
+                color: "inherit",
+              }}
+            >
+              {name.toUpperCase()}
+            </Typography>
             <Divider
               sx={{
                 height: 1.1,

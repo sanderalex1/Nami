@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { Outlet } from "react-router-dom";
 import Navbar from "./Components/Navbar";
 import Sidebar from "./Components/Sidebar";
 import Home from "./pages/Home";
@@ -21,8 +22,7 @@ function App() {
         onCloseSidebar={() => setSidebarOpen(false)}
         onOpenBasket={basketOpen}
       />
-      <Menu setSurfaceCount={setSurfaceCount} />
-      {/* <Home /> */}
+      <Outlet context={{ setSurfaceCount }} />
 
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
     </>

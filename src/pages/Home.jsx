@@ -8,10 +8,11 @@ const Home = () => {
         height: "27rem",
         aspectRatio: "305/433",
         minHeight: "70vh",
-        minWidth: "100vw",
+        minWidth: "100%",
         display: "flex",
         alignItems: "center",
         justifyContent: "center",
+        overflow: "hidden",
       }}
     >
       <img

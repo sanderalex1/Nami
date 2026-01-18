@@ -1,4 +1,5 @@
 import { AppBar, Toolbar, Box, IconButton, Typography } from "@mui/material";
+import { Link as RouterLink } from "react-router-dom";
 import menuButton from "../assets/menuButton.svg";
 import basketCase from "../assets/basketCase.svg";
 import cross from "../assets/cross.svg";
@@ -50,8 +51,15 @@ const Navbar = ({
         </IconButton>
 
         <Typography
+          component={RouterLink}
+          to="/"
           variant="h4"
-          sx={{ whiteSpace: "nowrap", textTransform: "lowercase" }}
+          sx={{
+            whiteSpace: "nowrap",
+            textTransform: "lowercase",
+            textDecoration: "none",
+            color: "inherit",
+          }}
         >
           nami
         </Typography>

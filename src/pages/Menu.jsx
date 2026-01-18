@@ -1,9 +1,12 @@
 import { Box, Button, ButtonGroup, Typography } from "@mui/material";
+import { useOutletContext } from "react-router-dom";
 import Cards from "../Components/Cards";
 import { useEffect } from "react";
 import styled from "@emotion/styled";
 
-const Menu = ({ setSurfaceCount }) => {
+const Menu = () => {
+  const { setSurfaceCount } = useOutletContext();
+
   useEffect(() => {
     setSurfaceCount((c) => c + 1);
     return () => setSurfaceCount((c) => c - 1);
@@ -32,7 +35,7 @@ const Menu = ({ setSurfaceCount }) => {
         paddingTop: "1rem",
         gap: "0.5rem",
         background: "var(--secondary-bg)",
-        height: "100vh",
+        height: "100%",
       })}
     >
       <Typography
