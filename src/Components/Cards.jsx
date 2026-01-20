@@ -10,6 +10,7 @@ const Cards = ({ handleAddToCart }) => {
         flexDirection: "column",
         gap: "4rem",
         px: "1rem",
+        marginTop: "3rem",
       }}
     >
       {dishesData.map((dish, index) => (

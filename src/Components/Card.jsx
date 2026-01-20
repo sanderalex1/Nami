@@ -6,11 +6,11 @@ const Card = ({ name, description, picture, price, reverse, onAddToCart }) => {
       sx={{
         display: "flex",
         alignItems: "center",
-        gap: "1.5rem",
+        gap: "2rem",
         flexDirection: reverse ? "row-reverse" : "row",
       }}
     >
-      <Box sx={{ width: "8.75rem", height: "11.6rem" }}>
+      <Box sx={{ width: "14.5rem", height: "12.5rem" }}>
         <Box
           component="img"
           src={picture}
@@ -34,7 +34,7 @@ const Card = ({ name, description, picture, price, reverse, onAddToCart }) => {
         }}
       >
         <Typography variant="h5">{price}</Typography>
-        <Typography variant="body1">{name}</Typography>
+        <Typography variant="h6">{name}</Typography>
         <Typography variant="body2">{description}</Typography>
 
         <Button
