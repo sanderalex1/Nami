@@ -4,21 +4,7 @@ import menuButton from "../assets/menuButton.svg";
 import basketCase from "../assets/basketCase.svg";
 import cross from "../assets/cross.svg";
 
-const Navbar = ({
-  open,
-  onMenuClick,
-  onCloseSidebar,
-  onOpenBasket,
-  appBarBg,
-}) => {
-  const handleIconClick = () => {
-    if (open) {
-      onCloseSidebar();
-    } else {
-      onOpenBasket();
-    }
-  };
-
+const Navbar = ({ open, onMenuClick, appBarBg }) => {
   return (
     <AppBar
       position="static"
@@ -64,7 +50,7 @@ const Navbar = ({
           nami
         </Typography>
 
-        <IconButton onClick={handleIconClick}>
+        <IconButton component={RouterLink} to="/shopping_cart">
           <img src={open ? cross : basketCase} alt="" />
         </IconButton>
       </Toolbar>

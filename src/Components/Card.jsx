@@ -10,7 +10,7 @@ const Card = ({ name, description, picture, price, reverse, onAddToCart }) => {
         flexDirection: reverse ? "row-reverse" : "row",
       }}
     >
-      <Box sx={{ width: "14.5rem", height: "12.5rem" }}>
+      <Box sx={{ width: "14.5rem", height: "12.4rem" }}>
         <Box
           component="img"
           src={picture}
