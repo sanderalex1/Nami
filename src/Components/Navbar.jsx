@@ -17,7 +17,6 @@ const Navbar = ({ open, onMenuClick, appBarBg }) => {
           appBarBg === "paper"
             ? theme.palette.background.paper
             : theme.palette.background.default,
-        color: theme.palette.text.primary,
         boxShadow: "none",
         color: theme.palette.text.primary,
       })}

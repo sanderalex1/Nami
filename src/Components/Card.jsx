@@ -10,7 +10,14 @@ const Card = ({ name, description, picture, price, reverse, onAddToCart }) => {
         flexDirection: reverse ? "row-reverse" : "row",
       }}
     >
-      <Box sx={{ width: "14.5rem", height: "12.4rem" }}>
+      <Box
+        sx={{
+          width: "12rem",
+          height: "10rem",
+          border: "1.5px solid",
+          overflow: "hidden",
+        }}
+      >
         <Box
           component="img"
           src={picture}
@@ -18,8 +25,7 @@ const Card = ({ name, description, picture, price, reverse, onAddToCart }) => {
           sx={{
             width: "100%",
             height: "100%",
-            objectFit: "contain",
-            border: "1.5px solid",
+            objectFit: "cover",
           }}
         />
       </Box>
