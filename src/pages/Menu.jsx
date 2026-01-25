@@ -1,7 +1,6 @@
 import { Box, Button, ButtonGroup, Typography } from "@mui/material";
-import { useOutletContext } from "react-router-dom";
 import Cards from "../Components/Cards";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import styled from "@emotion/styled";
 import circle from "../assets/circle.svg";
 
@@ -22,13 +21,7 @@ const MenuButton = styled(Button)(({ theme }) => ({
 const categories = ["ramen", "nigiri", "drinks"];
 
 const Menu = () => {
-  const { setSurfaceCount } = useOutletContext();
   const [activeCategory, setActiveCategory] = useState("ramen");
-
-  useEffect(() => {
-    setSurfaceCount((c) => c + 1);
-    return () => setSurfaceCount((c) => c - 1);
-  }, []);
 
   const handleAddToCart = {};
 

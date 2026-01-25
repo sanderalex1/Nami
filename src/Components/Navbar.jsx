@@ -4,7 +4,7 @@ import menuButton from "../assets/menuButton.svg";
 import basketCase from "../assets/basketCase.svg";
 import cross from "../assets/cross.svg";
 
-const Navbar = ({ open, onMenuClick, appBarBg }) => {
+const Navbar = ({ open, onMenuClick }) => {
   return (
     <AppBar
       position="static"
@@ -13,10 +13,7 @@ const Navbar = ({ open, onMenuClick, appBarBg }) => {
         width: "100%",
         zIndex: theme.zIndex.drawer + 1,
         boxSizing: "border-box",
-        backgroundColor:
-          appBarBg === "paper"
-            ? theme.palette.background.paper
-            : theme.palette.background.default,
+        backgroundColor: theme.palette.background.default,
         boxShadow: "none",
         color: theme.palette.text.primary,
       })}

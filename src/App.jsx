@@ -5,19 +5,15 @@ import Sidebar from "./Components/Sidebar";
 
 function App() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
-  const [surfaceCount, setSurfaceCount] = useState(0);
-  const isSurface = sidebarOpen || surfaceCount > 0;
-  const appBarBg = isSurface ? "paper" : "default";
 
   return (
     <>
       <Navbar
-        appBarBg={appBarBg}
         open={sidebarOpen}
         onMenuClick={() => setSidebarOpen(true)}
         onCloseSidebar={() => setSidebarOpen(false)}
       />
-      <Outlet context={{ setSurfaceCount }} />
+      <Outlet />
 
       <Sidebar open={sidebarOpen} onClose={() => setSidebarOpen(false)} />
     </>

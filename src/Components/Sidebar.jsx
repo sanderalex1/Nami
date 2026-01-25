@@ -27,7 +27,9 @@ const Sidebar = ({ open, onClose }) => {
       anchor="left"
       open={open}
       onClose={onClose}
+      autoWidth={false}
       disableScrollLock
+      variant="temporary"
       transitionDuration={0}
       ModalProps={{
         BackdropProps: {

@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 
-const Home = () => {
+const Home = ({ sidebarOpen }) => {
   return (
     <Box
       sx={{

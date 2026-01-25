@@ -1,36 +1,54 @@
-import { Box, Typography } from "@mui/material";
+import { Box, Container, Typography } from "@mui/material";
 
-const ShoppingCard = () => {
-  <Box sx={{ display: "flex", alignItems: "center", gap: "2rem" }}>
-    <Box
-      sx={{
-        width: "12rem",
-        height: "10rem",
-        border: "1.5px solid",
-        overflow: "hidden",
-      }}
-    >
+let quantity = 1;
+
+const ShoppingCard = ({ name, picture }) => {
+  return (
+    <Container maxWidth="xs">
       <Box
-        component="img"
-        src={picture}
-        alt={name}
         sx={{
-          width: "100%",
-          height: "100%",
-          objectFit: "cover",
+          display: "flex",
+          alignItems: "center",
+          gap: "2rem",
         }}
-      />
-    </Box>
+      >
+        <Box
+          sx={{
+            width: "10rem",
+            height: "12rem",
+            border: "1.5px solid",
+            overflow: "hidden",
+          }}
+        >
+          <Box
+            component="img"
+            src={picture}
+            alt={name}
+            sx={{
+              width: "100%",
+              height: "100%",
+              objectFit: "cover",
+            }}
+          />
+        </Box>
 
-    <Box>
-      <Typography>{name}</Typography>
-      <Box>
-        <span>+</span>
-        {quantity}
-        <span>-</span>
+        <Box>
+          <Typography variant="h6">{name}</Typography>
+          <Box
+            sx={{
+              display: "flex",
+              justifyContent: "center",
+              gap: "1rem",
+            }}
+          >
+            <Typography variant="h6">+</Typography>
+            <Typography variant="h6">{quantity}</Typography>
+            <Typography variant="h6">-</Typography>
+          </Box>
+        </Box>
       </Box>
-    </Box>
-  </Box>;
+    </Container>
+  );
 };
 
 export default ShoppingCard;

@@ -20,7 +20,7 @@ const theme = createTheme({
     mode: "light",
 
     background: {
-      default: "#EAAAB5",
+      default: "#FEEFF1",
       paper: "#FEEFF1",
     },
   },
@@ -41,7 +41,7 @@ const theme = createTheme({
     MuiCssBaseline: {
       styleOverrides: `
       :root {
-        --main-bg: #EAAAB5;
+        --main-bg: #FEEFF1;
         --secondary-bg: #FEEFF1;
       }
 
