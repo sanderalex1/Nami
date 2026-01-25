@@ -1,8 +1,6 @@
 import { Box, Container, Typography } from "@mui/material";
 
-let quantity = 1;
-
-const ShoppingCard = ({ name, picture }) => {
+const ShoppingCard = ({ name, picture, quantity }) => {
   return (
     <Container maxWidth="xs">
       <Box
