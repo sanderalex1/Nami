@@ -33,6 +33,7 @@ const Menu = () => {
         flexDirection: "column",
         alignItems: "center",
         paddingTop: "2rem",
+        paddingBottom: "4rem",
         gap: "0.5rem",
         background: "var(--secondary-bg)",
         height: "100%",

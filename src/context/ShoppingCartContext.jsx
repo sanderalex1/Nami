@@ -1,9 +1,10 @@
 import { createContext, useContext, useMemo, useState } from "react";
+import { useLocalStorage } from "../hooks/UseLocalStorage";
 
 const ShoppingCartContext = createContext();
 
 export function CartProvider({ children }) {
-  const [cartItems, setCartItems] = useState([]);
+  const [cartItems, setCartItems] = useLocalStorage("shopping-cart", []);
 
   const getItemQuantity = (id) => {
     return cartItems.find((item) => item.id === id)?.quantity || 0;

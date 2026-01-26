@@ -1,20 +1,9 @@
-import {
-  Badge,
-  Box,
-  Container,
-  Divider,
-  Typography,
-  Button,
-} from "@mui/material";
+import { Box, Container, Divider, Typography, Button } from "@mui/material";
 import ShoppingCard from "../Components/ShoppingCard";
 import { dishesData } from "../data/data";
 import { currencyFormater } from "../utilities/currencyFormater";
 import styled from "@emotion/styled";
 import { useCart } from "../context/ShoppingCartContext";
-
-const dish = dishesData[0];
-
-let price = 10;
 
 const MenuButton = styled(Button)(({ theme }) => ({
   position: "relative",
@@ -33,9 +22,16 @@ const MenuButton = styled(Button)(({ theme }) => ({
 }));
 
 const ShoppingCart = () => {
-  const { cartQuantity } = useCart();
+  const { cartItems } = useCart();
 
-  const quantity = cartQuantity;
+  const subtotal = cartItems.reduce((total, cartItem) => {
+    const item = dishesData.find((dish) => dish.id === cartItem.id);
+    return total + (item?.price || 0) * cartItem.quantity;
+  }, 0);
+
+  const deliveryPrice = subtotal > 0 ? 5 : 0;
+  const totalPrice = subtotal + deliveryPrice;
+
   return (
     <Container>
       <Box
@@ -45,30 +41,47 @@ const ShoppingCart = () => {
           display: "flex",
           flexDirection: "column",
           gap: "4rem",
+          paddingBottom: "4rem",
         }}
       >
         <Typography
           variant="h4"
-          sx={{ textTransform: "uppercase", maxWidth: "7rem" }}
+          sx={{
+            textTransform: "uppercase",
+            maxWidth: "7rem",
+          }}
         >
           <Box component="span">shopping cart</Box>
-        </Typography>
-        {quantity >= 1 ? (
-          <Box sx={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
-            <ShoppingCard
-              key={dish.id}
-              id={dish.id}
-              name={dish.name}
-              picture={dish.picture}
-              quantity={quantity}
-            />
-
-            <Divider
+          {cartItems.length > 0 && (
+            <Box
+              component="span"
               sx={{
-                height: "1px",
-                backgroundColor: "black",
+                fontSize: "0.6em",
+                ml: "0.25rem",
               }}
-            />
+            >
+              ({cartItems.length})
+            </Box>
+          )}
+        </Typography>
+        {cartItems.length > 0 ? (
+          <Box sx={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
+            {cartItems.map((cartItem) => {
+              const item = dishesData.find((dish) => dish.id === cartItem.id);
+              if (item == null) return null;
+
+              return (
+                <ShoppingCard
+                  key={cartItem.id}
+                  id={cartItem.id}
+                  name={item.name}
+                  picture={item.picture}
+                  quantity={cartItem.quantity}
+                />
+              );
+            })}
+
+            <Divider sx={{ height: "1px", backgroundColor: "black" }} />
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Box
                 sx={{
@@ -84,7 +97,7 @@ const ShoppingCart = () => {
                   >
                     <Typography variant="h6">subtotal</Typography>
                     <Typography variant="h5">
-                      {currencyFormater(price)}
+                      {currencyFormater(subtotal)}
                     </Typography>
                   </Box>
                   <Box
@@ -92,14 +105,14 @@ const ShoppingCart = () => {
                   >
                     <Typography variant="h6">delivery</Typography>
                     <Typography variant="h5">
-                      {currencyFormater(price)}
+                      {currencyFormater(deliveryPrice)}
                     </Typography>
                   </Box>
                 </Box>
                 <Box sx={{ display: "flex", justifyContent: "space-between" }}>
                   <Typography variant="h6">total</Typography>
                   <Typography variant="h5">
-                    {currencyFormater(price)}
+                    {currencyFormater(totalPrice)}
                   </Typography>
                 </Box>
                 <MenuButton sx={{ p: "0.5rem" }}>checkout</MenuButton>
