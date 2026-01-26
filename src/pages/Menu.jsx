@@ -3,6 +3,7 @@ import Cards from "../Components/Cards";
 import { useState } from "react";
 import styled from "@emotion/styled";
 import circle from "../assets/circle.svg";
+import { useCart } from "../context/ShoppingCartContext";
 
 const MenuButton = styled(Button)(({ theme }) => ({
   position: "relative",
@@ -21,9 +22,8 @@ const MenuButton = styled(Button)(({ theme }) => ({
 const categories = ["ramen", "nigiri", "drinks"];
 
 const Menu = () => {
+  const { increaseItemQuantity } = useCart();
   const [activeCategory, setActiveCategory] = useState("ramen");
-
-  const handleAddToCart = {};
 
   return (
     <Box
@@ -63,7 +63,6 @@ const Menu = () => {
               fontWeight: activeCategory === cat ? 700 : 400,
             }}
           >
-            {/* ACTIVE CIRCLE */}
             {activeCategory === cat && (
               <Box
                 component="img"
@@ -71,23 +70,22 @@ const Menu = () => {
                 alt=""
                 sx={{
                   position: "absolute",
-                  top: "-5px", // sits above button
+                  top: "-5px",
                   left: "50%",
                   transform: "translateX(-50%)",
                   width: "74px",
                   height: "33px",
-                  zIndex: 1, // ✅ ABOVE button
+                  zIndex: 1,
                   pointerEvents: "none",
                 }}
               />
             )}
 
-            {/* BUTTON TEXT */}
             <Box
               component="span"
               sx={{
                 position: "relative",
-                zIndex: 2, // ✅ ABOVE circle
+                zIndex: 2,
               }}
             >
               {cat}
@@ -95,7 +93,7 @@ const Menu = () => {
           </MenuButton>
         ))}
       </ButtonGroup>
-      <Cards handleAddToCart={handleAddToCart} />
+      <Cards handleAddToCart={increaseItemQuantity} />
     </Box>
   );
 };

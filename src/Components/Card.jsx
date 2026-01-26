@@ -1,4 +1,5 @@
 import { Box, Typography, Button } from "@mui/material";
+import { currencyFormater } from "../utilities/currencyFormater";
 
 const Card = ({ name, description, picture, price, reverse, onAddToCart }) => {
   return (
@@ -39,7 +40,7 @@ const Card = ({ name, description, picture, price, reverse, onAddToCart }) => {
           gap: "0.25rem",
         }}
       >
-        <Typography variant="h5">{price}</Typography>
+        <Typography variant="h5">{currencyFormater(price)}</Typography>
         <Typography variant="h6">{name}</Typography>
         <Typography variant="body2">{description}</Typography>
 

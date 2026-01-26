@@ -15,10 +15,10 @@ const Cards = ({ handleAddToCart }) => {
     >
       {dishesData.map((dish, index) => (
         <Card
-          key={dish.name}
+          key={dish.id}
           {...dish}
           reverse={index % 2 !== 0}
-          onAddToCart={() => handleAddToCart(dish)}
+          onAddToCart={() => handleAddToCart(dish.id)}
         />
       ))}
     </Box>

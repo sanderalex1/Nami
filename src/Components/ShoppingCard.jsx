@@ -1,6 +1,8 @@
 import { Box, Container, Typography } from "@mui/material";
+import { useCart } from "../context/ShoppingCartContext";
 
-const ShoppingCard = ({ name, picture, quantity }) => {
+const ShoppingCard = ({ name, picture, quantity, id }) => {
+  const { increaseItemQuantity, decreaseItemQuantity } = useCart();
   return (
     <Container maxWidth="xs">
       <Box
@@ -39,9 +41,13 @@ const ShoppingCard = ({ name, picture, quantity }) => {
               gap: "1rem",
             }}
           >
-            <Typography variant="h6">+</Typography>
+            <Typography variant="h6" onClick={() => increaseItemQuantity(id)}>
+              +
+            </Typography>
             <Typography variant="h6">{quantity}</Typography>
-            <Typography variant="h6">-</Typography>
+            <Typography variant="h6" onClick={() => decreaseItemQuantity(id)}>
+              -
+            </Typography>
           </Box>
         </Box>
       </Box>

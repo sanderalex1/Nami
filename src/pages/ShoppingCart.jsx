@@ -10,12 +10,11 @@ import ShoppingCard from "../Components/ShoppingCard";
 import { dishesData } from "../data/data";
 import { currencyFormater } from "../utilities/currencyFormater";
 import styled from "@emotion/styled";
+import { useCart } from "../context/ShoppingCartContext";
 
 const dish = dishesData[0];
 
 let price = 10;
-
-let quantity = 1;
 
 const MenuButton = styled(Button)(({ theme }) => ({
   position: "relative",
@@ -34,6 +33,9 @@ const MenuButton = styled(Button)(({ theme }) => ({
 }));
 
 const ShoppingCart = () => {
+  const { cartQuantity } = useCart();
+
+  const quantity = cartQuantity;
   return (
     <Container>
       <Box
@@ -55,6 +57,7 @@ const ShoppingCart = () => {
           <Box sx={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
             <ShoppingCard
               key={dish.id}
+              id={dish.id}
               name={dish.name}
               picture={dish.picture}
               quantity={quantity}
