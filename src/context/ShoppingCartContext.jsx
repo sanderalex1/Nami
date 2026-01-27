@@ -10,6 +10,22 @@ export function CartProvider({ children }) {
     return cartItems.find((item) => item.id === id)?.quantity || 0;
   };
 
+  const changeItemQuantity = (id, count) => {
+    setCartItems((currItems) => {
+      if (currItems.find((item) => item.id === id) == null) {
+        return [...currItems, { id, quantity: count }];
+      } else {
+        return currItems.map((item) => {
+          if (item.id === id) {
+            return { ...item, quantity: item.quantity + count };
+          } else {
+            return item;
+          }
+        });
+      }
+    });
+  };
+
   const increaseItemQuantity = (id) => {
     setCartItems((currItems) => {
       if (currItems.find((item) => item.id === id) == null) {
@@ -59,6 +75,7 @@ export function CartProvider({ children }) {
       decreaseItemQuantity,
       removeItemFromCart,
       cartQuantity,
+      changeItemQuantity,
     }),
     [cartItems],
   );

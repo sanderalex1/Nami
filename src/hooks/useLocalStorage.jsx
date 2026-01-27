@@ -7,9 +7,8 @@ export function useLocalStorage(key, initialValue) {
 
     if (typeof initialValue === "function") {
       return initialValue();
-    } else {
-      return initialValue;
     }
+    return initialValue;
   });
 
   useEffect(() => {

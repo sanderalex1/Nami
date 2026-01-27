@@ -15,9 +15,10 @@ const ShoppingCard = ({ name, picture, quantity, id }) => {
       >
         <Box
           sx={{
-            width: "10rem",
-            height: "12rem",
+            width: "7rem",
+            height: "7rem",
             border: "1.5px solid",
+            borderRadius: "128px",
             overflow: "hidden",
           }}
         >
