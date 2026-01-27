@@ -13,7 +13,7 @@ const Navbar = ({ open, onMenuClick }) => {
         width: "100%",
         zIndex: theme.zIndex.drawer + 1,
         boxSizing: "border-box",
-        backgroundColor: theme.palette.background.default,
+        backgroundColor: "transparent",
         boxShadow: "none",
         color: theme.palette.text.primary,
       })}

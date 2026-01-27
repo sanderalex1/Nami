@@ -40,8 +40,11 @@ const Sidebar = ({ open, onClose }) => {
         "& .MuiDrawer-paper": {
           top: NAVBAR_HEIGHT,
           height: `calc(100% - ${NAVBAR_HEIGHT})`,
+          backgroundImage: `url("/home.png")`,
+          backgroundSize: `cover`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
           width: "100%",
-          backgroundColor: "var(--secondary-bg)",
           boxShadow: "none",
         },
       }}

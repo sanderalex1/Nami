@@ -1,6 +1,6 @@
 import { Box } from "@mui/material";
 
-const Home = ({ sidebarOpen }) => {
+const Home = () => {
   return (
     <Box
       sx={{
@@ -14,17 +14,7 @@ const Home = ({ sidebarOpen }) => {
         justifyContent: "center",
         overflow: "hidden",
       }}
-    >
-      <img
-        src="home.png"
-        alt=""
-        sx={{
-          maxWidth: "100%",
-          maxHeight: "100%",
-          objectFit: "contain",
-        }}
-      />
-    </Box>
+    ></Box>
   );
 };
 

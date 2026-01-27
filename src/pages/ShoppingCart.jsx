@@ -36,12 +36,12 @@ const ShoppingCart = () => {
     <Container>
       <Box
         sx={{
-          backgroundColor: "var(--main-bg)",
           height: "100%",
           display: "flex",
           flexDirection: "column",
-          gap: "4rem",
+          gap: "2rem",
           paddingBottom: "4rem",
+          paddingTop: "2rem",
         }}
       >
         <Typography
@@ -49,6 +49,7 @@ const ShoppingCart = () => {
           sx={{
             textTransform: "uppercase",
             maxWidth: "7rem",
+            paddingLeft: "1rem",
           }}
         >
           <Box component="span">shopping cart</Box>
@@ -81,7 +82,7 @@ const ShoppingCart = () => {
               );
             })}
 
-            <Divider sx={{ height: "1px", backgroundColor: "black" }} />
+            <Divider sx={{ height: "0.5px", backgroundColor: "black" }} />
             <Box sx={{ display: "flex", justifyContent: "center" }}>
               <Box
                 sx={{
@@ -91,31 +92,41 @@ const ShoppingCart = () => {
                   width: "70%",
                 }}
               >
-                <Box>
+                <Box
+                  sx={{
+                    display: "flex",
+                    gap: "0.5rem",
+                    flexDirection: "column",
+                  }}
+                >
                   <Box
                     sx={{ display: "flex", justifyContent: "space-between" }}
                   >
-                    <Typography variant="h6">subtotal</Typography>
-                    <Typography variant="h5">
+                    <Typography variant="h8">subtotal</Typography>
+                    <Typography variant="h7">
                       {currencyFormater(subtotal)}
                     </Typography>
                   </Box>
                   <Box
                     sx={{ display: "flex", justifyContent: "space-between" }}
                   >
-                    <Typography variant="h6">delivery</Typography>
-                    <Typography variant="h5">
+                    <Typography variant="h8">delivery</Typography>
+                    <Typography variant="h7">
                       {currencyFormater(deliveryPrice)}
                     </Typography>
                   </Box>
                 </Box>
                 <Box sx={{ display: "flex", justifyContent: "space-between" }}>
-                  <Typography variant="h6">total</Typography>
-                  <Typography variant="h5">
+                  <Typography sx={{ fontWeight: 700 }} variant="h6">
+                    total
+                  </Typography>
+                  <Typography variant="h7">
                     {currencyFormater(totalPrice)}
                   </Typography>
                 </Box>
-                <MenuButton sx={{ p: "0.5rem" }}>checkout</MenuButton>
+                <MenuButton sx={{ p: "0.5rem" }}>
+                  <Typography variant="h8">checkout</Typography>{" "}
+                </MenuButton>
               </Box>
             </Box>
           </Box>
