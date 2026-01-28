@@ -1,20 +1,35 @@
-import { Box } from "@mui/material";
+import { Box, Typography } from "@mui/material";
 
 const Home = () => {
   return (
     <Box
       sx={{
-        width: "19rem",
-        height: "27rem",
-        aspectRatio: "305/433",
-        minHeight: "70vh",
+        minHeight: "100%",
         minWidth: "100%",
-        display: "flex",
-        alignItems: "center",
-        justifyContent: "center",
         overflow: "hidden",
       }}
-    ></Box>
+    >
+      <Box
+        sx={{
+          minHeight: "70vh",
+          display: "flex",
+          justifyContent: "flex-end",
+          alignItems: "flex-end",
+        }}
+      >
+        <Typography>
+          和カフェ Namiでは、 ラーメン、抹茶、寿司を通して お腹と心を満たす
+          ひとときを提供します
+        </Typography>
+        <Box
+          component="img"
+          src="foodArtboard.png"
+          sx={{
+            maxWidth: "20rem",
+          }}
+        />
+      </Box>
+    </Box>
   );
 };
 
