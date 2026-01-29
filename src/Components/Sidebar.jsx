@@ -40,10 +40,6 @@ const Sidebar = ({ open, onClose }) => {
         "& .MuiDrawer-paper": {
           top: NAVBAR_HEIGHT,
           height: `calc(100% - ${NAVBAR_HEIGHT})`,
-          backgroundImage: `url("/home.png")`,
-          backgroundSize: `cover`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
           width: "100%",
           boxShadow: "none",
         },
@@ -51,8 +47,12 @@ const Sidebar = ({ open, onClose }) => {
     >
       <Box
         sx={{
-          height: "80%",
+          height: "100%",
           display: "flex",
+          backgroundImage: `url("/home.png")`,
+          backgroundSize: `cover`,
+          backgroundRepeat: "no-repeat",
+          backgroundPosition: "center",
           flexDirection: "column",
           justifyContent: "center",
           alignContent: "center",
