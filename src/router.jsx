@@ -7,7 +7,7 @@ import ShoppingCart from "./pages/ShoppingCart";
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "/Nami/",
     element: <App />,
     children: [
       { index: true, element: <Home /> },
