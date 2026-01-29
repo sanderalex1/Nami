@@ -36,7 +36,7 @@ const Sidebar = ({ open, onClose }) => {
       sx={{
         "& .MuiDrawer-paper": {
           top: 0,
-          backgroundImage: "url('/home.png')",
+          backgroundImage: `url(${import.meta.env.BASE_URL}home.png)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",

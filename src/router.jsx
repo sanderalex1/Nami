@@ -5,17 +5,22 @@ import Menu from "./pages/Menu";
 import Profile from "./pages/Profile";
 import ShoppingCart from "./pages/ShoppingCart";
 
-const router = createBrowserRouter([
+const router = createBrowserRouter(
+  [
+    {
+      path: "/",
+      element: <App />,
+      children: [
+        { index: true, element: <Home /> },
+        { path: "menu", element: <Menu /> },
+        { path: "profile", element: <Profile /> },
+        { path: "shopping_cart", element: <ShoppingCart /> },
+      ],
+    },
+  ],
   {
-    path: "/",
-    element: <App />,
-    children: [
-      { index: true, element: <Home /> },
-      { path: "/menu", element: <Menu /> },
-      { path: "/profile", element: <Profile /> },
-      { path: "/shopping_cart", element: <ShoppingCart /> },
-    ],
+    basename: import.meta.env.BASE_URL, // 🔥 important
   },
-]);
+);
 
 export default router;

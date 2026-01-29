@@ -15,7 +15,7 @@ function App() {
         onMenuClick={() => setSidebarOpen(true)}
         onCloseSidebar={() => setSidebarOpen(false)}
       />
-      <Box sx={{ paddingTop: "5rem" }}>
+      <Box sx={{ paddingTop: "4rem" }}>
         <Outlet />
       </Box>
 

@@ -42,7 +42,7 @@ const theme = createTheme({
         }
 
         body {
-          background-image: url('/home.png');
+          background-image: url('${import.meta.env.BASE_URL}home.png');
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;

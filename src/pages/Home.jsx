@@ -7,7 +7,7 @@ const Home = () => {
         sx={{
           height: "100%",
           width: "100%",
-          backgroundImage: "url('/123.png')",
+          backgroundImage: `url(${import.meta.env.BASE_URL}123.png)`,
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
