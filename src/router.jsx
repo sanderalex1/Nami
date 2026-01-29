@@ -11,9 +11,9 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: "menu", element: <Menu /> },
-      { path: "profile", element: <Profile /> },
-      { path: "shopping_cart", element: <ShoppingCart /> },
+      { path: "/Nami/menu", element: <Menu /> },
+      { path: "/Nami/profile", element: <Profile /> },
+      { path: "/Nami/shopping_cart", element: <ShoppingCart /> },
     ],
   },
 ]);

@@ -34,7 +34,7 @@ const Navbar = ({ open, onMenuClick }) => {
 
         <Typography
           component={RouterLink}
-          to="/"
+          to="/Nami/"
           variant="h4"
           sx={{
             whiteSpace: "nowrap",
@@ -46,7 +46,7 @@ const Navbar = ({ open, onMenuClick }) => {
           nami
         </Typography>
 
-        <IconButton component={RouterLink} to="/shopping_cart">
+        <IconButton component={RouterLink} to="/Nami/shopping_cart">
           <img src={open ? cross : basketCase} alt="" />
         </IconButton>
       </Toolbar>

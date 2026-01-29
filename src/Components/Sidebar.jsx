@@ -27,7 +27,6 @@ const Sidebar = ({ open, onClose }) => {
       anchor="left"
       open={open}
       onClose={onClose}
-      autoWidth={false}
       disableScrollLock
       variant="temporary"
       transitionDuration={0}
@@ -49,7 +48,7 @@ const Sidebar = ({ open, onClose }) => {
         sx={{
           height: "100%",
           display: "flex",
-          backgroundImage: `url("/home.png")`,
+          backgroundImage: `url("/Nami/home.png")`,
           backgroundSize: `cover`,
           backgroundRepeat: "no-repeat",
           backgroundPosition: "center",
