@@ -7,13 +7,13 @@ import ShoppingCart from "./pages/ShoppingCart";
 
 const router = createBrowserRouter([
   {
-    path: "/Nami/",
+    path: "/",
     element: <App />,
     children: [
       { index: true, element: <Home /> },
-      { path: "/Nami/menu", element: <Menu /> },
-      { path: "/Nami/profile", element: <Profile /> },
-      { path: "/Nami/shopping_cart", element: <ShoppingCart /> },
+      { path: "/menu", element: <Menu /> },
+      { path: "/profile", element: <Profile /> },
+      { path: "/shopping_cart", element: <ShoppingCart /> },
     ],
   },
 ]);

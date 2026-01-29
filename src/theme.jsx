@@ -42,7 +42,7 @@ const theme = createTheme({
         }
 
         body {
-          background-image: url('/Nami/home.png');
+          background-image: url('/home.png');
           background-size: cover;
           background-repeat: no-repeat;
           background-position: center;

@@ -1,15 +1,15 @@
-import { AppBar, Toolbar, Box, IconButton, Typography } from "@mui/material";
+import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import menuButton from "../assets/menuButton.svg";
 import basketCase from "../assets/basketCase.svg";
 import cross from "../assets/cross.svg";
 
-const Navbar = ({ open, onMenuClick }) => {
+const Navbar = ({ open, onMenuClick, onCloseSidebar }) => {
   return (
     <AppBar
-      position="static"
       elevation={0}
       sx={(theme) => ({
+        position: "fixed",
         width: "100%",
         zIndex: theme.zIndex.drawer + 1,
         boxSizing: "border-box",
@@ -34,7 +34,8 @@ const Navbar = ({ open, onMenuClick }) => {
 
         <Typography
           component={RouterLink}
-          to="/Nami/"
+          to="/"
+          onClick={() => onCloseSidebar()}
           variant="h4"
           sx={{
             whiteSpace: "nowrap",
@@ -46,7 +47,11 @@ const Navbar = ({ open, onMenuClick }) => {
           nami
         </Typography>
 
-        <IconButton component={RouterLink} to="/Nami/shopping_cart">
+        <IconButton
+          onClick={() => open && onCloseSidebar()}
+          to={!open && "/shopping_cart"}
+          component={RouterLink}
+        >
           <img src={open ? cross : basketCase} alt="" />
         </IconButton>
       </Toolbar>

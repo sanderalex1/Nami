@@ -2,8 +2,6 @@ import { Box, Divider, Drawer, Typography } from "@mui/material";
 import { useEffect } from "react";
 import { Link as RouterLink } from "react-router-dom";
 
-const NAVBAR_HEIGHT = "72px";
-
 const Sidebar = ({ open, onClose }) => {
   const navigationList = [
     { number: "01", name: "Home", link: "/" },
@@ -37,9 +35,13 @@ const Sidebar = ({ open, onClose }) => {
       }}
       sx={{
         "& .MuiDrawer-paper": {
-          top: NAVBAR_HEIGHT,
-          height: `calc(100% - ${NAVBAR_HEIGHT})`,
+          top: 0,
+          backgroundImage: "url('/home.png')",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          backgroundRepeat: "no-repeat",
           width: "100%",
+          height: "100%",
           boxShadow: "none",
         },
       }}
@@ -48,10 +50,6 @@ const Sidebar = ({ open, onClose }) => {
         sx={{
           height: "100%",
           display: "flex",
-          backgroundImage: `url("/Nami/home.png")`,
-          backgroundSize: `cover`,
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
           flexDirection: "column",
           justifyContent: "center",
           alignContent: "center",

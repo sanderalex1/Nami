@@ -7,7 +7,7 @@ const Home = () => {
         sx={{
           height: "100%",
           width: "100%",
-          backgroundImage: "url('/Nami/123.png')",
+          backgroundImage: "url('/123.png')",
           backgroundSize: "cover",
           backgroundPosition: "center",
           backgroundRepeat: "no-repeat",
