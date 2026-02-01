@@ -1,13 +1,22 @@
-import { AppBar, Toolbar, IconButton, Typography } from "@mui/material";
+import {
+  AppBar,
+  Toolbar,
+  IconButton,
+  Typography,
+  Badge,
+  Box,
+} from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
 import menuButton from "../assets/menuButton.svg";
 import basketCase from "../assets/basketCase.svg";
 import cross from "../assets/cross.svg";
 import { useEffect, useRef, useState } from "react";
+import { useCart } from "../context/ShoppingCartContext";
 
 const Navbar = ({ open, onMenuClick, onCloseSidebar }) => {
   const [showMenu, setShowMenu] = useState(true);
   const lastScrollY = useRef(0);
+  const { cartQuantity } = useCart();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -74,7 +83,12 @@ const Navbar = ({ open, onMenuClick, onCloseSidebar }) => {
           onClick={() => onCloseSidebar()}
           sx={{ display: open ? "inline-flex" : "none" }}
         >
-          <img src={cross} alt="close sidebar" />
+          <Box
+            component="img"
+            src={cross}
+            alt="close sidebar"
+            sx={{ width: 28, height: 28 }}
+          />
         </IconButton>
 
         <IconButton
@@ -82,7 +96,25 @@ const Navbar = ({ open, onMenuClick, onCloseSidebar }) => {
           component={RouterLink}
           sx={{ display: open ? "none" : "inline-flex" }}
         >
-          <img src={basketCase} alt={"shopping cart"} />
+          <Badge
+            color="none"
+            badgeContent={cartQuantity}
+            sx={{
+              "& .MuiBadge-badge": {
+                border: "1px solid black",
+                padding: "0 5px",
+                fontSize: "12px",
+                transform: "translate(100%, -80%)",
+              },
+            }}
+          >
+            <Box
+              component="img"
+              src={basketCase}
+              alt={"shopping cart"}
+              sx={{ width: 28, height: 28 }}
+            />
+          </Badge>
         </IconButton>
       </Toolbar>
     </AppBar>

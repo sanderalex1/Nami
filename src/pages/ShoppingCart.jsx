@@ -22,7 +22,7 @@ const MenuButton = styled(Button)(({ theme }) => ({
 }));
 
 const ShoppingCart = () => {
-  const { cartItems } = useCart();
+  const { cartItems, cartQuantity } = useCart();
 
   const subtotal = cartItems.reduce((total, cartItem) => {
     const item = dishesData.find((dish) => dish.id === cartItem.id);
@@ -53,17 +53,6 @@ const ShoppingCart = () => {
           }}
         >
           <Box component="span">shopping cart</Box>
-          {cartItems.length > 0 && (
-            <Box
-              component="span"
-              sx={{
-                fontSize: "0.6em",
-                ml: "0.25rem",
-              }}
-            >
-              ({cartItems.length})
-            </Box>
-          )}
         </Typography>
         {cartItems.length > 0 ? (
           <Box sx={{ display: "flex", flexDirection: "column", gap: "4rem" }}>
