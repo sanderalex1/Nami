@@ -3,13 +3,22 @@ import { Link as RouterLink } from "react-router-dom";
 import menuButton from "../assets/menuButton.svg";
 import basketCase from "../assets/basketCase.svg";
 import cross from "../assets/cross.svg";
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 
 const Navbar = ({ open, onMenuClick, onCloseSidebar }) => {
-  const [scrolled, setScrolled] = useState(false);
+  const [showMenu, setShowMenu] = useState(true);
+  const lastScrollY = useRef(0);
+
   useEffect(() => {
     const handleScroll = () => {
-      setScrolled(window.scrollY > 50); // change after 50px scroll
+      const currentScrollY = window.scrollY;
+
+      if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
+        setShowMenu(false);
+      }
+      setShowMenu(true);
+
+      lastScrollY.current = currentScrollY;
     };
 
     window.addEventListener("scroll", handleScroll);
@@ -25,11 +34,11 @@ const Navbar = ({ open, onMenuClick, onCloseSidebar }) => {
         zIndex: theme.zIndex.drawer + 1,
         boxSizing: "border-box",
         backgroundColor: "transparent",
-        backgroundImage: scrolled && `url(${import.meta.env.BASE_URL}home.png)`,
+        backgroundImage: showMenu && `url(${import.meta.env.BASE_URL}home.png)`,
         color: theme.palette.text.primary,
-        boxShadow: scrolled ? theme.shadows[4] : "none",
-        transition: "all 0.3s ease", // smooth animation ✨
-        backdropFilter: scrolled ? "blur(6px)" : "none", // optional glass effect
+        boxShadow: showMenu ? theme.shadows[4] : "none",
+        transition: "transform 0.3s ease",
+        transform: showMenu ? "translateY(0)" : "translateY(-100%)",
       })}
     >
       <Toolbar
