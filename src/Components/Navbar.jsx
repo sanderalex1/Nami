@@ -15,8 +15,9 @@ const Navbar = ({ open, onMenuClick, onCloseSidebar }) => {
 
       if (currentScrollY > lastScrollY.current && currentScrollY > 80) {
         setShowMenu(false);
+      } else {
+        setShowMenu(true);
       }
-      setShowMenu(true);
 
       lastScrollY.current = currentScrollY;
     };
@@ -52,13 +53,12 @@ const Navbar = ({ open, onMenuClick, onCloseSidebar }) => {
         }}
       >
         <IconButton onClick={onMenuClick}>
-          <img src={menuButton} alt="" />
+          <img src={menuButton} alt="menu button" />
         </IconButton>
 
         <Typography
           component={RouterLink}
           to="/"
-          onClick={() => onCloseSidebar()}
           variant="h4"
           sx={{
             whiteSpace: "nowrap",
@@ -71,11 +71,18 @@ const Navbar = ({ open, onMenuClick, onCloseSidebar }) => {
         </Typography>
 
         <IconButton
-          onClick={() => open && onCloseSidebar()}
-          to={!open && "/shopping_cart"}
-          component={RouterLink}
+          onClick={() => onCloseSidebar()}
+          sx={{ display: open ? "inline-flex" : "none" }}
         >
-          <img src={open ? cross : basketCase} alt="" />
+          <img src={cross} alt="close sidebar" />
+        </IconButton>
+
+        <IconButton
+          to="/shopping_cart"
+          component={RouterLink}
+          sx={{ display: open ? "none" : "inline-flex" }}
+        >
+          <img src={basketCase} alt={"shopping cart"} />
         </IconButton>
       </Toolbar>
     </AppBar>

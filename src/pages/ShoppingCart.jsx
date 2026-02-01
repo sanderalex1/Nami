@@ -41,7 +41,7 @@ const ShoppingCart = () => {
           flexDirection: "column",
           gap: "2rem",
           paddingBottom: "4rem",
-          paddingTop: "2rem",
+          paddingTop: "4rem",
         }}
       >
         <Typography

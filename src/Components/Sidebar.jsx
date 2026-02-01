@@ -9,23 +9,11 @@ const Sidebar = ({ open, onClose }) => {
     { number: "03", name: "Profile", link: "profile" },
   ];
 
-  useEffect(() => {
-    document.body.style.overflow = "unset";
-    if (open) {
-      document.body.style.overflow = "hidden";
-    }
-
-    return () => {
-      document.body.style.overflow = "unset";
-    };
-  }, [open]);
-
   return (
     <Drawer
       anchor="left"
       open={open}
       onClose={onClose}
-      disableScrollLock
       variant="temporary"
       transitionDuration={0}
       ModalProps={{
