@@ -13,10 +13,11 @@ const Card = ({ name, description, picture, price, reverse, onAddToCart }) => {
     >
       <Box
         sx={{
-          width: "12rem",
+          width: "10rem",
           height: "10rem",
           border: "1.5px solid",
           overflow: "hidden",
+          flexShrink: 0,
         }}
       >
         <Box
